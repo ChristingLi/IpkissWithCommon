@@ -8,7 +8,7 @@
 
 extension UIColor {
     
-    static func hexColor(_ hexColor : Int64) -> UIColor {
+    public static func hexColor(_ hexColor : Int64) -> UIColor {
         
         let red = ((CGFloat)((hexColor & 0xFF0000) >> 16))/255.0;
         let green = ((CGFloat)((hexColor & 0xFF00) >> 8))/255.0;
@@ -17,7 +17,7 @@ extension UIColor {
         return UIColor(red: red, green: green, blue: blue, alpha: 1)
     }
     
-    static func hexColor(_ hexColor : Int64, alpha : CGFloat ) -> UIColor{
+    public static func hexColor(_ hexColor : Int64, alpha : CGFloat ) -> UIColor{
         let red = ((CGFloat)((hexColor & 0xFF0000) >> 16))/255.0;
         let green = ((CGFloat)((hexColor & 0xFF00) >> 8))/255.0;
         let blue = ((CGFloat)(hexColor & 0xFF))/255.0;
@@ -25,12 +25,12 @@ extension UIColor {
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
     
-    static func hexColor(_ r : CGFloat, _ g : CGFloat, _ b : CGFloat, _ a : CGFloat) -> UIColor {
+    public static func hexColor(_ r : CGFloat, _ g : CGFloat, _ b : CGFloat, _ a : CGFloat) -> UIColor {
         
         return UIColor(red: r, green: g, blue: b, alpha: a)
     }
     
-    convenience init(_ r : CGFloat, _ g : CGFloat, _ b : CGFloat) {
+    public convenience init(_ r : CGFloat, _ g : CGFloat, _ b : CGFloat) {
         
         let red = r / 255.0
         let green = g / 255.0
@@ -39,7 +39,7 @@ extension UIColor {
         self.init(red: red, green: green, blue: blue, alpha: 1)
     }
     
-    convenience init(_ r : CGFloat, _ g : CGFloat, _ b : CGFloat, _ a : CGFloat) {
+    public convenience init(_ r : CGFloat, _ g : CGFloat, _ b : CGFloat, _ a : CGFloat) {
         
         let red = r / 255.0
         let green = g / 255.0
@@ -48,7 +48,7 @@ extension UIColor {
         self.init(red: red, green: green, blue: blue, alpha: a)
     }
     
-    func createImage(_ color: UIColor ) -> UIImage? {
+    public func createImage(_ color: UIColor ) -> UIImage? {
         let rect = CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0)
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()
@@ -75,7 +75,7 @@ extension UIColor {
         )
     }
     
-    convenience init(hex: String) {
+    public convenience init(hex: String) {
         let scanner = Scanner(string: hex)
         scanner.scanLocation = 0
         

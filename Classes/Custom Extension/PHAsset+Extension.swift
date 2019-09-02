@@ -9,7 +9,7 @@ import Photos
 
 extension PHAsset {
     ///获取Image Url 地址
-    func getURL(completionHandler : @escaping ((_ responseURL : URL?) -> Void)){
+    public func getURL(completionHandler : @escaping ((_ responseURL : URL?) -> Void)){
         
         if self.mediaType == .image {
             let options: PHContentEditingInputRequestOptions = PHContentEditingInputRequestOptions()

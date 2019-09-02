@@ -10,13 +10,13 @@ import Foundation
 
 extension UIView{
     
-    func clearAll(){
+    public func clearAll(){
         if(self.subviews.count > 0){
             self.subviews.forEach({$0.removeFromSuperview()})
         }
     }
     
-    func setShadow(width:CGFloat,bColor:UIColor,
+    public func setShadow(width:CGFloat,bColor:UIColor,
                    sColor:UIColor,offset:CGSize,opacity:Float,radius:CGFloat) {
         //设置视图边框宽度
         self.layer.borderWidth = width
@@ -34,7 +34,7 @@ extension UIView{
         self.layer.shadowOffset = offset
     }
     //复制
-    func duplicate(_ view: UIView?) -> UIView? {
+    public func duplicate(_ view: UIView?) -> UIView? {
         var tempArchive: Data? = nil
         if let view = view {
             tempArchive = NSKeyedArchiver.archivedData(withRootObject: view)

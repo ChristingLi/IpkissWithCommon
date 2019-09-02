@@ -11,7 +11,7 @@ extension UIImage {
     /**
      缩放图片到指定Size
      */
-    func scaleImage(with size: CGSize) -> UIImage? {
+    public func scaleImage(with size: CGSize) -> UIImage? {
         //创建上下文
         UIGraphicsBeginImageContextWithOptions(size, _: true, _: scale)
         //绘图
@@ -24,7 +24,7 @@ extension UIImage {
     /**
      按比例缩放图片，scale就是缩放比例
      */
-    func scaleImage(withScale scale: CGFloat) -> UIImage? {
+    public func scaleImage(withScale scale: CGFloat) -> UIImage? {
         if scale < 0 {
             return self
         }
@@ -33,7 +33,7 @@ extension UIImage {
     }
     
     //将图片缩放成指定尺寸（多余部分自动删除）
-    func scaled(to newSize: CGSize) -> UIImage {
+    public func scaled(to newSize: CGSize) -> UIImage {
         //计算比例
         let aspectWidth  = newSize.width/size.width
         let aspectHeight = newSize.height/size.height
@@ -53,7 +53,7 @@ extension UIImage {
     }
     
     //将图片裁剪成指定比例（多余部分自动删除）
-    func crop(ratio: CGFloat) -> UIImage {
+    public func crop(ratio: CGFloat) -> UIImage {
         //计算最终尺寸
         var newSize:CGSize!
         if size.width/size.height > ratio {
@@ -77,7 +77,7 @@ extension UIImage {
     /**
      从指定的rect裁剪出图片
      */
-    func clipImage(with rect: CGRect) -> UIImage? {
+    public func clipImage(with rect: CGRect) -> UIImage? {
         let clipImageRef = cgImage?.cropping(to: CGRect(x: rect.origin.x * scale, y: rect.origin.y * scale, width: rect.size.width * scale, height: rect.size.height * scale))
         let smallBounds = CGRect(x: 0, y: 0, width: CGFloat(clipImageRef!.width) / scale, height: CGFloat(clipImageRef!.height) / scale)
         UIGraphicsBeginImageContextWithOptions(smallBounds.size, _: true, _: scale)
@@ -92,7 +92,7 @@ extension UIImage {
     }
     
     //创建颜色Image
-    class func imageWithColor(color: UIColor) -> UIImage {
+    public class func imageWithColor(color: UIColor) -> UIImage {
         let rect: CGRect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 1, height: 1), false, 0)
         color.setFill()
@@ -105,7 +105,7 @@ extension UIImage {
     /**
      *  重设图片大小
      */
-    func reSizeImage(reSize:CGSize)->UIImage {
+    public func reSizeImage(reSize:CGSize)->UIImage {
         //UIGraphicsBeginImageContext(reSize);
         UIGraphicsBeginImageContextWithOptions(reSize,false,UIScreen.main.scale);
         self.draw(in: CGRect(x: 0, y: 0, width: reSize.width, height: reSize.height));
@@ -117,13 +117,13 @@ extension UIImage {
     /**
      *  等比率缩放
      */
-    func scaleImage(scaleSize:CGFloat)->UIImage {
+    public func scaleImage(scaleSize:CGFloat)->UIImage {
         let reSize = CGSize(width:self.size.width * scaleSize,height:self.size.height * scaleSize)
         return reSizeImage(reSize: reSize)
     }
     
     ///获取image URL
-    func getImageUrl() -> URL? {
+    public func getImageUrl() -> URL? {
         let fileManager = FileManager.default
         let rootPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,
                                                            .userDomainMask, true)[0] as String

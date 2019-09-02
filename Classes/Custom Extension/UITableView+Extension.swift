@@ -10,7 +10,7 @@ import Foundation
 
 extension UITableView {
     
-    func setAndLayoutTableHeaderView(header: UIView) {
+    public func setAndLayoutTableHeaderView(header: UIView) {
         
         self.tableHeaderView = header
         //Tip:这里要先计算子视图的高度后，再去更新tableHeaderView的布局
@@ -30,7 +30,7 @@ extension UITableView {
         self.tableHeaderView = header
     }
     
-    func setAndLayoutTableFooterView(footer: UIView) {
+    public func setAndLayoutTableFooterView(footer: UIView) {
         self.tableFooterView = footer
         //Tip:这里要先计算子视图的高度后，再去更新tableHeaderView的布局
         //作用域为最上级

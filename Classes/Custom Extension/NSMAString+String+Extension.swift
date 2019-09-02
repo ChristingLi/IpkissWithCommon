@@ -9,26 +9,26 @@
 import Foundation
 
 extension NSMutableAttributedString{
-    func foreColor(color:UIColor)->NSMutableAttributedString{
+    public func foreColor(color:UIColor)->NSMutableAttributedString{
         
         self.addAttributes([ NSAttributedString.Key.foregroundColor:color], range: self.allRange())
         
         return self
         
     }
-    func font(font:UIFont)->NSMutableAttributedString{
+    public func font(font:UIFont)->NSMutableAttributedString{
         
         self.addAttributes([NSAttributedString.Key.font:font], range: self.allRange())
         return self
         
     }
     
-    func lineStyle() -> NSMutableAttributedString{
+    public func lineStyle() -> NSMutableAttributedString{
         self.addAttributes([NSMutableAttributedString.Key.strikethroughStyle:NSUnderlineStyle.single.rawValue], range: self.allRange())
         return self
     }
     
-    func allRange()->NSRange{
+    public func allRange()->NSRange{
         
         return NSMakeRange(0,self.length)
         
@@ -37,12 +37,12 @@ extension NSMutableAttributedString{
 
 extension String {
     //文本宽高
-    func li_widthForComment(font : UIFont , height: CGFloat = 15) -> CGFloat {
+    public func li_widthForComment(font : UIFont , height: CGFloat = 15) -> CGFloat {
         let rect = NSString(string: self).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: height), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         return ceil(rect.width)
     }
     //文本宽高
-    func li_heightForComment(font : UIFont , width: CGFloat) -> CGFloat {
+    public func li_heightForComment(font : UIFont , width: CGFloat) -> CGFloat {
         let rect = NSString(string: self).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         return ceil(rect.height)
     }
@@ -50,7 +50,7 @@ extension String {
 }
 
 extension String{
-    func toAttr()->NSMutableAttributedString{
+    public func toAttr()->NSMutableAttributedString{
         
         return NSMutableAttributedString(string: self)
     }
@@ -63,7 +63,7 @@ precedencegroup ATPrecedence{
     lowerThan: MultiplicationPrecedence
 }
 
-func >>> (attr1 : NSMutableAttributedString ,attr2 : NSMutableAttributedString ) -> NSMutableAttributedString{
+public func >>> (attr1 : NSMutableAttributedString ,attr2 : NSMutableAttributedString ) -> NSMutableAttributedString{
     attr1.append(attr2)
     return attr1
 }

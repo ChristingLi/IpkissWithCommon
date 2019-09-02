@@ -11,7 +11,7 @@ import Foundation
 extension CAGradientLayer {
     
     //获取彩虹渐变层
-    func gradientLayer(_ begin : UIColor,_ end : UIColor) -> CAGradientLayer {
+    public func gradientLayer(_ begin : UIColor,_ end : UIColor) -> CAGradientLayer {
         //定义渐变的颜色
         let gradientColors = [begin.cgColor,
                               end.cgColor]
