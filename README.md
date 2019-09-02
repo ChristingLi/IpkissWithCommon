@@ -1,9 +1,9 @@
 # IpkissWithCommon
 
 [![CI Status](http://img.shields.io/travis/Mob_Developer/IpkissWithCommon?style=flat)](https://travis-ci.org/ChristingLi/IpkissWithCommon)
-[![Version](https://img.shields.io/cocoapods/v/IpkissWithCommon?style=flat)](http://cocoapods.org/pods/IpkissWithCommon)
-[![License](https://img.shields.io/cocoapods/l/IpkissWithCommon?style=flat)](http://cocoapods.org/pods/IpkissWithCommon)
-[![Platform](https://img.shields.io/cocoapods/p/IpkissWithCommon?style=flat)](http://cocoapods.org/pods/IpkissWithCommon)
+[![Version](https://img.shields.io/cocoapods/v/IpkissWithCommon?style=flat)](https://cocoapods.org/pods/IpkissWithCommon)
+[![License](https://img.shields.io/cocoapods/l/IpkissWithCommon?style=flat)](https://cocoapods.org/pods/IpkissWithCommon)
+[![Platform](https://img.shields.io/cocoapods/p/IpkissWithCommon?style=flat)](https://cocoapods.org/pods/IpkissWithCommon)
 
 ## Example
 
