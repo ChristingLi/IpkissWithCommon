@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "IpkissWithCommon"
-  spec.version      = "1.0.1"
+  spec.version      = "1.1"
   spec.summary      = "Things Commonly User Pods "
 
   # This description is used to generate tags and improve search results.
@@ -95,7 +95,26 @@ Pod::Spec.new do |spec|
 
   spec.source_files  = "Classes/**/*","Classes/*"
   # spec.exclude_files = "Classes/Exclude"
-
+  spec.subspec "Classes" do |classes|
+    classes.subspec "Alamofire" do |ca|  
+      ca.source_files = "Classes/Alamofire/*.swift"
+    end
+    classes.subspec "Custom" do |cc|  
+      cc.source_files = "Classes/Custom/*.swift"
+      cc.subspec "Reachability" do |cr|
+        cr.source_files = "Classes/Custom/Reachability/*.swift"
+      end
+      cc.subspec "Response" do |cres|
+        cres.source_files = "Classes/Custom/Response/*.swift"
+      end
+    end  
+    classes.subspec "Custom Extension" do |ce|  
+      ce.source_files = "Classes/Custom Extension/*.swift"
+    end  
+    classes.subspec "Sources" do |s|  
+      s.source_files = "Classes/Sources/*.swift"
+    end    
+  end 
   # spec.public_header_files = "Classes/**/*.h"
 
 

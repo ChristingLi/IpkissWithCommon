@@ -49,7 +49,7 @@ extension UIView{
         static var kUIViewClick = "kUIClick"
     }
     
-    var saveClickView : UIClick{
+    public var saveClickView : UIClick{
         get {
             return (objc_getAssociatedObject(self, &AssociatedKeys.kUIViewClick) as? UIClick)!
         }
@@ -58,7 +58,7 @@ extension UIView{
         }
     }
     
-    func setOnClickView(click : @escaping () -> Void) {
+    public func setOnClickView(click : @escaping () -> Void) {
         self.isUserInteractionEnabled = true
         self.saveClickView = UIClick()
         self.saveClickView.click = click
@@ -73,6 +73,6 @@ extension UIView{
     
 }
 
-class UIClick : Any{
+open class UIClick : Any{
     var click : () -> Void = {return}
 }
