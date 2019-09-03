@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "IpkissWithCommon"
-  spec.version      = "1.1"
+  spec.version      = "1.2"
   spec.summary      = "Things Commonly User Pods "
 
   # This description is used to generate tags and improve search results.
@@ -82,7 +82,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/ChristingLi/IpkissWithCommon", :tag => "#{spec.version}" }
+  spec.source = { :git => "https://github.com/ChristingLi/IpkissWithCommon", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -93,28 +93,25 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "Classes/**/*","Classes/*"
+  # spec.source_files  = "Classes/**/*","Classes/*"
   # spec.exclude_files = "Classes/Exclude"
-  spec.subspec "Classes" do |classes|
-    classes.subspec "Alamofire" do |ca|  
-      ca.source_files = "Classes/Alamofire/*.swift"
-    end
-    classes.subspec "Custom" do |cc|  
-      cc.source_files = "Classes/Custom/*.swift"
-      cc.subspec "Reachability" do |cr|
-        cr.source_files = "Classes/Custom/Reachability/*.swift"
-      end
-      cc.subspec "Response" do |cres|
-        cres.source_files = "Classes/Custom/Response/*.swift"
-      end
-    end  
-    classes.subspec "Custom Extension" do |ce|  
-      ce.source_files = "Classes/Custom Extension/*.swift"
-    end  
-    classes.subspec "Sources" do |s|  
-      s.source_files = "Classes/Sources/*.swift"
-    end    
-  end 
+  # 
+  spec.subspec 'Alamofire' do |ss|
+    ss.source_files = 'Classes/Alamofire/*.swift'
+  end
+  spec.subspec 'Custom' do |ss|
+    ss.source_files = 'Classes/Custom/*.swift'
+  end
+  spec.subspec 'CustomExtension' do |ss|
+    ss.source_files = 'Classes/CustomExtension/*.swift'
+  end
+  spec.subspec 'Sources' do |ss|
+    ss.source_files = 'Classes/Sources/*.swift'
+  end
+  spec.subspec 'Reachability' do |ss|
+    ss.source_files = 'Classes/Reachability/*.swift'
+  end
+  
   # spec.public_header_files = "Classes/**/*.h"
 
 
