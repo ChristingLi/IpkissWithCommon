@@ -15,7 +15,7 @@ open class ReachabilityManager : NSObject {
     fileprivate var isNeedAfterRequset = false
     
     
-    init(_ callback:@escaping() -> ()) {
+    public init(_ callback:@escaping() -> ()) {
         super.init()
         manager.setReachabilityStatusChange { (status) in
             switch status {
@@ -43,7 +43,7 @@ open class ReachabilityManager : NSObject {
     }
     
     
-    func start(){
+    public func start(){
         manager.startMonitoring()
     }
     

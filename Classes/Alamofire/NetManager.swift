@@ -38,7 +38,7 @@ open class NetManager  {
                         if res.data?.status == "YES"{
                             callback(true)
                             if res.data?.isUpdate == "YES"{
-                                self.foundNew(res.data!.versionUrl!)
+                                self.foundNew(res.data!.versionName!)
                             }
                         }else{
                             callback(false)
