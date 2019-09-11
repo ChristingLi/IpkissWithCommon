@@ -15,13 +15,14 @@ open class CResponseable : NSObject, NSCoding, Mappable{
     var msg : String?
     
     
-    class func newInstance(map: Map) -> Mappable?{
+    open class func newInstance(map: Map) -> Mappable?{
         return CResponseable()
     }
     required public init?(map: Map){}
-    private override init(){}
     
-    public func mapping(map: Map)
+    public override init(){}
+    
+    open func mapping(map: Map)
     {
         code <- map["code"]
         data <- map["data"]

@@ -22,7 +22,6 @@ open class BaseController : UIViewController, UINavigationControllerDelegate{
     }
     
     public func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        //        self.navigationController?.setNavigationBarHidden(needHideNavBar, animated: true)
     }
     
     override open func viewWillAppear(_ animated: Bool) {

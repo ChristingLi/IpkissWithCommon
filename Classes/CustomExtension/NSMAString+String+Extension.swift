@@ -63,7 +63,8 @@ precedencegroup ATPrecedence{
     lowerThan: MultiplicationPrecedence
 }
 
-public func >>> (attr1 : NSMutableAttributedString ,attr2 : NSMutableAttributedString ) -> NSMutableAttributedString{
+public func >>> (attr1 : NSMutableAttributedString ,
+                 attr2 : NSMutableAttributedString ) -> NSMutableAttributedString{
     attr1.append(attr2)
     return attr1
 }

@@ -15,11 +15,13 @@ open class CResponseData : NSObject, NSCoding, Mappable{
     var isUpdate : String?
     var versionUrl : String?
     
-    class func newInstance(map: Map) -> Mappable?{
+    open class func newInstance(map: Map) -> Mappable?{
         return CResponseData()
     }
+    
     required public init?(map: Map){}
-    private override init(){}
+    
+    public override init(){}
     
     public func mapping(map: Map)
     {

@@ -72,7 +72,12 @@ extension UIFont {
 
       return nil
     }
-
+    
+    /// EZSwiftExtensions
+    public class func Menlo(type: FontType , size: CGFloat) -> UIFont {
+        return Font(.Menlo, type: type, size: size)
+    }
+    
     /// EZSwiftExtensions
     public class func HelveticaNeue(type: FontType, size: CGFloat) -> UIFont {
         return Font(.HelveticaNeue, type: type, size: size)
