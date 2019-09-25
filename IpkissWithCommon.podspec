@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "IpkissWithCommon"
-  spec.version      = "1.3.1"
+  spec.version      = "1.4.0"
   spec.summary      = "Things Commonly User Pods "
 
   # This description is used to generate tags and improve search results.
@@ -99,9 +99,6 @@ Pod::Spec.new do |spec|
   spec.subspec 'Alamofire' do |ss|
     ss.source_files = 'Classes/Alamofire/*.swift'
   end
-  spec.subspec 'Custom' do |ss|
-    ss.source_files = 'Classes/Custom/*.swift'
-  end
   spec.subspec 'CustomExtension' do |ss|
     ss.source_files = 'Classes/CustomExtension/*.swift'
   end
@@ -111,6 +108,15 @@ Pod::Spec.new do |spec|
   spec.subspec 'Reachability' do |ss|
     ss.source_files = 'Classes/Reachability/*.swift'
   end
+  spec.subspec 'Custom' do |ss|
+    ss.source_files = 'Classes/Custom/*.swift'
+  end
+  spec.subspec 'Utils' do |ss|
+    ss.source_files = 'Classes/Utils/*.swift'
+  end 
+  spec.subspec 'Moya-ObjectMapper' do |ss|
+    ss.source_files = 'Classes/Moya-ObjectMapper/*.swift'
+  end 
   
   # spec.public_header_files = "Classes/**/*.h"
 
@@ -143,9 +149,10 @@ Pod::Spec.new do |spec|
   spec.dependency 'SnapKit'  # 依赖库
   spec.dependency 'SDWebImage'
   spec.dependency 'Toast'
-  spec.dependency 'QMUIKit'
+  spec.dependency 'QMUIKit','~> 4.0.0-beta'
   spec.dependency 'SVProgressHUD'
-  spec.dependency 'RxSwift'
+  spec.dependency 'Moya/RxSwift'
+  spec.dependency 'RxSwift','~> 4.5.0'
   spec.dependency 'AFNetworking'
   spec.dependency 'Alamofire'
   spec.dependency 'ObjectMapper'
