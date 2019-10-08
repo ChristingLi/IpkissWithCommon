@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "IpkissWithCommon"
-  spec.version      = "1.4.0"
+  spec.version      = "1.4.1"
   spec.summary      = "Things Commonly User Pods "
 
   # This description is used to generate tags and improve search results.
@@ -149,7 +149,7 @@ Pod::Spec.new do |spec|
   spec.dependency 'SnapKit'  # 依赖库
   spec.dependency 'SDWebImage'
   spec.dependency 'Toast'
-  spec.dependency 'QMUIKit','~> 4.0.0-beta'
+  spec.dependency 'QMUIKit','~> 4.0.0'
   spec.dependency 'SVProgressHUD'
   spec.dependency 'Moya/RxSwift'
   spec.dependency 'RxSwift','~> 4.5.0'
