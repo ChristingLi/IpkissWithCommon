@@ -149,7 +149,7 @@ Pod::Spec.new do |spec|
   spec.dependency 'SnapKit'  # 依赖库
   spec.dependency 'SDWebImage'
   spec.dependency 'Toast'
-  spec.dependency 'QMUIKit','~> 4.0.0'
+  spec.dependency 'QMUIKit'
   spec.dependency 'SVProgressHUD'
   spec.dependency 'Moya/RxSwift'
   spec.dependency 'RxSwift','~> 4.5.0'
