@@ -12,10 +12,13 @@ class BaseTitleController : UIViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        self.navigationBarColor = UIColor(hexString: "0x02A2FD")
-        self.navBar?.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor : UIColor.white,
-            NSAttributedString.Key.font: UIFont.Menlo(type: .Medium, size: 17)]
+        
+        navigationController?
+            .navigationBar
+            .titleTextAttributes = [
+        NSAttributedString.Key.foregroundColor : UIColor.white,
+        NSAttributedString.Key.font: UIFont(name: "Menlo-Medium", size: 17)
+        ]
         
         
         let item = self.navigationItem.leftBarButtonItems?[0]
@@ -26,7 +29,7 @@ class BaseTitleController : UIViewController {
     }
     
     @objc func backToPrevious(){
-        self.popVC()
+        self.navigationController?.popViewController(animated: true)
     }
     
     
